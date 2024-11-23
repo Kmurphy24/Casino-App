@@ -92,9 +92,9 @@ function App() {
       case Suit.Clubs:
         return <span className="text-black">&#9827;</span>;
       case Suit.Diamonds:
-        return <span className="text-red-500">&#9826;</span>;
+        return <span className="text-red-500">&#9830;</span>;
       case Suit.Hearts:
-        return <span className="text-red-500">&#9825;</span>;
+        return <span className="text-red-500">&#9829;</span>;
       case Suit.Spades:
         return <span className="text-black">&#9824;</span>;
     }
