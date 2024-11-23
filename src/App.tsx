@@ -90,7 +90,6 @@ function App() {
   return (
     <>
       <div className="p-4">The user has {chips} chips</div>
-      {userScore.score > 21 && <div>Player Bust</div>}
       <button
         onClick={dealTwoCards}
         disabled={userScore.score >= 21}
@@ -108,6 +107,8 @@ function App() {
         ))}
       </div>
       <div>
+        {userScore.score > 21 && <div>Player Bust</div>}
+        Current card value:&nbsp;
         {userScore.score}
         {userScore.secondaryScore > 0 && ` / ${userScore.secondaryScore}`}
       </div>
