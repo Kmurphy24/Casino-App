@@ -90,13 +90,13 @@ function App() {
   const displaySuit = (suit: Suit) => {
     switch (suit) {
       case Suit.Clubs:
-        return <>&#9827;</>;
+        return <span className="text-black">&#9827;</span>;
       case Suit.Diamonds:
-        return <>&#9826;</>;
+        return <span className="text-red-500">&#9826;</span>;
       case Suit.Hearts:
-        return <>&#9825;</>;
+        return <span className="text-red-500">&#9825;</span>;
       case Suit.Spades:
-        return <>&#9824;</>;
+        return <span className="text-black">&#9824;</span>;
     }
   };
 
