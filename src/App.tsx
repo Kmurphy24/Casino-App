@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import { getFullDeck } from "./utils/cardDeck";
-import { Card, Pip } from "./types/card";
+import { Card, Pip, Suit } from "./types/card";
 
 interface UserScore {
   score: number;
@@ -87,6 +87,19 @@ function App() {
     } while (shuffleCount < 10);
   };
 
+  const displaySuit = (suit: Suit) => {
+    switch (suit) {
+      case Suit.Clubs:
+        return <>&#9827;</>;
+      case Suit.Diamonds:
+        return <>&#9826;</>;
+      case Suit.Hearts:
+        return <>&#9825;</>;
+      case Suit.Spades:
+        return <>&#9824;</>;
+    }
+  };
+
   return (
     <>
       <div className="p-4">The user has {chips} chips</div>
@@ -102,7 +115,7 @@ function App() {
         {dealtCards.map((card) => (
           <div key={`${card.pip}-${card.suit}`} className="flex flex-col p-2">
             <span>{card.pip}</span>
-            <span>{card.suit}</span>
+            <span className="text-3xl">{displaySuit(card.suit)}</span>
           </div>
         ))}
       </div>
